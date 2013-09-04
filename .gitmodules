@@ -1,0 +1,15 @@
+[submodule "lib/dat.gui"]
+	path = lib/dat.gui
+	url = https://code.google.com/p/dat-gui/
+[submodule "lib/two.js"]
+	path = lib/two.js
+	url = https://github.com/jonobr1/two.js.git
+[submodule "lib/backbone"]
+	path = lib/backbone
+	url = https://github.com/jashkenas/backbone
+[submodule "lib/socket.io"]
+	path = lib/socket.io
+	url = https://github.com/LearnBoost/socket.io-client
+[submodule "lib/keypress"]
+	path = lib/keypress
+	url = https://github.com/dmauro/Keypress.git
