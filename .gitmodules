@@ -13,3 +13,6 @@
 [submodule "lib/keypress"]
 	path = lib/keypress
 	url = https://github.com/dmauro/Keypress.git
+[submodule "lib/underscore"]
+	path = lib/underscore
+	url = https://github.com/jashkenas/underscore
