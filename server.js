@@ -11,6 +11,8 @@ io.static.add('dat.gui.js', {file: 'lib/dat.gui/build/dat.gui.js'});
 io.static.add('util.js', {file: 'lib/util.js'});
 io.static.add('keypress.js', {file: 'lib/keypress/keypress.js'});
 io.static.add('underscore.js', {file: 'lib/underscore/underscore.js'});
+io.static.add('math.js', {file: 'lib/math.js'});
+io.static.add('boid.js', {file: 'lib/boid.js'});
 io.static.add('flock.js', {file: 'lib/flock.js'});
 
 function handler (req, res) {
