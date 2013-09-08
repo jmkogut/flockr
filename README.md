@@ -1,12 +1,14 @@
 # flockr
 
-Implimentations of craig reynolds' famous flocking algorithm in various languages. You can demo whichever works best at:
+Implimentations of craig reynolds' famous flocking algorithm. You are viewing the Haskell branch.
+
+  https://github.com/faylang/fay/wiki/Installing-and-running
 
   http://jmkogut.github.io/flockr
 
 ## Performance
 
-With vanilla javascript, I get about 44fps. ( Bookmarklet: http://ricardocabello.com/blog/post/707 ) 
+Benchmark against vanilla JS to see which is faster.
 
 ## Todos
 

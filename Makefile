@@ -1,10 +1,6 @@
 SRV=http-server
 PORT=8080
 
-all: node
+all: 		; fay Main.hs
 
-node:
-	./server.js
-
-vanilla:
-	$(SRV) -p $(PORT)
+serve:   	; $(SRV) -p $(PORT)
