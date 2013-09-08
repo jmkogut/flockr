@@ -6,13 +6,22 @@ import Dawm
 
 -----------------------
 
+beginPath          :: Context -> Fay ()
+beginPath           = ffi "%1.beginPath()"
 
+closePath          :: Context -> Fay ()
+closePath           = ffi "%1.closePath()"
 
 save          :: Context -> Fay ()
 save           = ffi "%1.save()"
 
 restore       :: Context -> Fay ()
 restore        = ffi "%1.restore()"
+
+setTransform  :: Context ->
+                 Int -> Int -> Int ->
+                 Int -> Int -> Int -> Fay ()
+setTransform   = ffi "%1.setTransform(%2,%3,%4,%5,%6,%7)"
 
 translate     :: Context -> Double -> Double -> Fay ()
 translate      = ffi "%1.translate(%2,%3)"
@@ -68,3 +77,14 @@ fill           = ffi "%1.fill()"
 
 stroke        :: Context -> Fay ()
 stroke         = ffi "%1.stroke()"
+
+---------------------------------------
+
+reset         :: Context -> Fay ()
+reset      ctx = do
+  save ctx
+  beginPath ctx
+  setTransform ctx 1 0 0 1 0 0
+  clearRect ctx 0 0 w h
+  restore ctx
+ where (w,h) = getBounds

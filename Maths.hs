@@ -9,7 +9,7 @@ random   = ffi "Math.random()"
 floor   :: Double -> Fay (Double)
 floor    = ffi "Math.floor(%1)"
 
-pi      :: Fay (Double)
+pi      :: Double
 pi       = ffi "Math.PI"
 
 -- randFloat     :: Double -> Fay(Double)

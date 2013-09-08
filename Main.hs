@@ -7,37 +7,42 @@ import Dawm
 import Maths
 import Vektor
 import Drawing
-
--- format pair
-fmtPair         :: (Int, Int) -> String
-fmtPair (x,y)    = "{"++ show x ++", "++ show y ++"}"
+import Boid
 
 -------------
 
-drawBoid :: Context -> Fay ()
-drawBoid ctx = do
-  let (x,y) = (50,50)
-  let size  = 20
-  
-  translate ctx x y
+--startFlock   :: Event ->
+loopFlock = do
+    --console "Loop triggered" 
+    canv <- getElement ident
+    ctx  <- getContext canv "2d"
+    
+    reset ctx
+    drawBoid ctx
+    
+    requestAnimationFrame loopFlock
+  where
+    ident = (ID "canvas")
 
-  pi' <- pi 
-  rotate ctx (90 * pi' / 180)
-  --moveTo ctx x y    -- centre
-  moveTo ctx (-size/2) 0
-  lineTo ctx  (size/2) 0
-  moveTo ctx  (size/2) 0
-  lineTo ctx   0      (size*1.5)
-  moveTo ctx   0      (size*1.5)
-  lineTo ctx (-size/2) 0
+----------------------------------------------------------
 
-  stroke ctx
+startLoop _ = do
+    console "OnLoad fired"
+    maximiseElement ident
+    console $ "Canvas maximised to " ++ (fmt getBounds)
+
+    canv <- getElement ident
+    ctx  <- getContext canv "2d"
+    translate ctx 50 50
+    save ctx 
+    
+    requestAnimationFrame loopFlock
+    return False
+  where 
+    ident = (ID "canvas")
+    fmt (h,t) = show h ++ ", " ++ show t
+
 
 main :: Fay ()
-main = do
-  c <- initialise "canvas"
-  ctx <- getContext c "2d"
-  b <- getBounds
-  log' $ "Canvas maximised to " ++ (fmtPair b)
-
-  drawBoid ctx
+main  = do
+  addWindowEvent "load" startLoop
